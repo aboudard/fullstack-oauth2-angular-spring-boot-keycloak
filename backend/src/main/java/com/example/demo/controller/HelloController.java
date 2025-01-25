@@ -28,5 +28,12 @@ public class HelloController {
         return new Message(message);
     }
 
+    @GetMapping("/text")
+    @PreAuthorize("permitAll()")
+    public String text() {
+        return "Hello, this is a simple text controller !";
+    }
+
     record Message(String message) {}
 }
+
